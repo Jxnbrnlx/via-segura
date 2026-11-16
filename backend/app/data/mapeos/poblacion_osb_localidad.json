@@ -1,0 +1,18 @@
+{
+  "codigo": "poblacion_osb_localidad",
+  "fuente_codigo": "poblacion_osb_localidad",
+  "descripcion": "Población por año, localidad, sexo y edad simple (archivo osb_demografia-poblacion-localidad).",
+  "verificado": "Verificado con el archivo recibido el 16-11-2026: 131.502 filas, años 2005-2035, código 0 = Bogotá y 1-20 = localidades, separador ';'. La suma de las 20 localidades es igual al total de Bogotá en todos los años.",
+  "hojas": {
+    "poblacion": {
+      "tipo": "poblacion",
+      "campos": {
+        "anio": ["ANO", "AÑO", "ANIO"],
+        "codigo_localidad": ["CODIGO_LOCALIDAD"],
+        "nombre_localidad": ["NOMBRE_LOCALIDAD"],
+        "poblacion": ["POBLACION"]
+      },
+      "notas": "Se suman sexos y edades por año y localidad. Los años posteriores al actual son proyecciones."
+    }
+  }
+}

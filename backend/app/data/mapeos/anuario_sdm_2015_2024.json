@@ -1,0 +1,60 @@
+{
+  "codigo": "anuario_sdm_2015_2024",
+  "fuente_codigo": "anuario_sdm_2015_2024",
+  "descripcion": "Base Anuario de Siniestralidad (archivo rotulado 2024; cubre 2015-2024). Secretaría Distrital de Movilidad.",
+  "verificado": "Hoja Siniestros: columnas verificadas con el CSV exportado (16-11-2026), 278.614 filas, fecha MM/DD/AAAA coherente con AA_Acc y DD_Mes_Acc en el 100 %. Hojas Actor_vial y Vehiculos: nombres tomados del diccionario de la Parte 1; confírmelos en la previsualización.",
+  "hojas": {
+    "siniestros": {
+      "tipo": "siniestros",
+      "nombres_hoja": ["Siniestros"],
+      "formatos_fecha": ["%m/%d/%Y", "%Y-%m-%d", "%d/%m/%Y"],
+      "campos": {
+        "id_registro": ["Codigo_Accidente"],
+        "formulario": ["Formulario"],
+        "fecha_evento": ["Fecha_Acc"],
+        "anio_control": ["AA_Acc"],
+        "mes_control": ["MM_Acc"],
+        "dia_control": ["DD_Mes_Acc"],
+        "hora": ["Hora_Acc"],
+        "minuto": ["Min_Acc"],
+        "localidad": ["Localidad"],
+        "direccion": ["Direccion"],
+        "clase_siniestro": ["Clase_Acc"],
+        "gravedad": ["Gravedad_indicador_30d"],
+        "gravedad_tradicional": ["Gravedad_Indicador_Tradicional"],
+        "latitud": ["Latitud"],
+        "longitud": ["Longitud"]
+      },
+      "columnas_atributos": ["Elemento_Choque", "Tipo_Objeto_Fijo"],
+      "prefijos_banderas": ["Con_"],
+      "notas": "Gravedad = indicador a 30 días (serie comparable). La gravedad tradicional se guarda aparte."
+    },
+    "actores": {
+      "tipo": "actores",
+      "nombres_hoja": ["Actor_vial", "Actor vial"],
+      "campos": {
+        "id_registro": ["Codigo_Accidente", "Codigo_Siniestro"],
+        "consecutivo_victima": ["Ccodigo_Victima", "Codigo_Victima"],
+        "codigo_vehiculo": ["Codigo_Vehiculo"],
+        "estado": ["Gravedad_Indicador_30d", "Gravedad_indicador_30d"],
+        "condicion": ["Condicion"],
+        "condicion_especifica": ["Condicion_Especifica"],
+        "sexo": ["Sexo"],
+        "edad": ["Edad"]
+      },
+      "notas": "Estado de la persona = indicador a 30 días (HERIDO, ILESO, MUERTO)."
+    },
+    "vehiculos": {
+      "tipo": "vehiculos",
+      "nombres_hoja": ["Vehiculos", "Vehículos"],
+      "campos": {
+        "id_registro": ["Codigo_Accidente", "Codigo_Siniestro"],
+        "codigo_vehiculo": ["Codigo_Vehiculo"],
+        "clase": ["Clase"],
+        "servicio": ["Servicio"],
+        "modalidad": ["Modalidad"]
+      },
+      "notas": "La placa nunca se importa."
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "codigo": "anuario_sdm_2025",
+  "fuente_codigo": "anuario_sdm_2025",
+  "descripcion": "Base Anuario de Siniestralidad Vial 2025. Secretaría Distrital de Movilidad.",
+  "verificado": "Hoja Siniestros: columnas verificadas con el CSV exportado (16-11-2026), 11.573 filas, fecha M/D/AAAA coherente con AA_Siniestro y DD_Mes_Siniestro en el 100 %, coordenadas con coma decimal. Hojas Actor vial y Vehículos: nombres tomados del diccionario de la Parte 1; confírmelos en la previsualización.",
+  "hojas": {
+    "siniestros": {
+      "tipo": "siniestros",
+      "nombres_hoja": ["Siniestros"],
+      "formatos_fecha": ["%m/%d/%Y", "%Y-%m-%d", "%d/%m/%Y"],
+      "campos": {
+        "id_registro": ["Codigo_Siniestro"],
+        "formulario": ["Formulario"],
+        "fecha_evento": ["Fecha_Siniestro"],
+        "anio_control": ["AA_Siniestro"],
+        "mes_control": ["MM_Siniestro"],
+        "dia_control": ["DD_Mes_Siniestro"],
+        "hora": ["Hora_Siniestro"],
+        "minuto": ["Min_Siniestro"],
+        "localidad": ["Localidad"],
+        "direccion": ["Direccion"],
+        "clase_siniestro": ["Clase_Siniestro"],
+        "gravedad": ["Gravedad_indicador_30d"],
+        "latitud": ["Latitud"],
+        "longitud": ["Longitud"]
+      },
+      "columnas_atributos": ["Elemento_Choque", "Tipo_Objeto_Fijo"],
+      "prefijos_banderas": ["Con_"],
+      "notas": "Este archivo no incluye siniestros 'Solo daños' ni gravedad tradicional."
+    },
+    "actores": {
+      "tipo": "actores",
+      "nombres_hoja": ["Actor vial", "Actor_vial"],
+      "campos": {
+        "id_registro": ["Codigo_Siniestro", "Codigo_Accidente"],
+        "consecutivo_victima": ["Ccodigo_Victima", "Codigo_Victima"],
+        "codigo_vehiculo": ["Codigo_Vehiculo"],
+        "estado": ["Gravedad_Indicador_30d", "Gravedad_indicador_30d"],
+        "condicion": ["Condicion"],
+        "condicion_especifica": ["Condicion_Especifica"],
+        "sexo": ["Sexo"],
+        "edad": ["Edad"]
+      }
+    },
+    "vehiculos": {
+      "tipo": "vehiculos",
+      "nombres_hoja": ["Vehículos", "Vehiculos"],
+      "campos": {
+        "id_registro": ["Codigo_Siniestro", "Codigo_Accidente"],
+        "codigo_vehiculo": ["Codigo_Vehiculo"],
+        "clase": ["Clase"],
+        "servicio": ["Servicio"],
+        "modalidad": ["Modalidad"]
+      }
+    }
+  }
+}

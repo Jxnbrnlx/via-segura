@@ -1,0 +1,50 @@
+{
+  "codigo": "demo_sintetica",
+  "fuente_codigo": "demo_sintetica",
+  "descripcion": "DEMO: datos sintéticos generados por scripts/generar_demo.py (no son cifras oficiales).",
+  "verificado": "Columnas definidas por el propio generador (app/services/demo.py).",
+  "hojas": {
+    "siniestros": {
+      "tipo": "siniestros",
+      "nombres_hoja": ["Siniestros"],
+      "formatos_fecha": ["%Y-%m-%d"],
+      "campos": {
+        "id_registro": ["Codigo_Siniestro"],
+        "formulario": ["Formulario"],
+        "fecha_evento": ["Fecha"],
+        "hora": ["Hora"],
+        "minuto": ["Minuto"],
+        "localidad": ["Localidad"],
+        "direccion": ["Direccion"],
+        "clase_siniestro": ["Clase"],
+        "gravedad": ["Gravedad"],
+        "latitud": ["Latitud"],
+        "longitud": ["Longitud"]
+      },
+      "notas": "Datos sintéticos de demostración."
+    },
+    "actores": {
+      "tipo": "actores",
+      "nombres_hoja": ["Actores"],
+      "campos": {
+        "id_registro": ["Codigo_Siniestro"],
+        "consecutivo_victima": ["Consecutivo"],
+        "codigo_vehiculo": ["Codigo_Vehiculo"],
+        "estado": ["Estado"],
+        "condicion": ["Condicion"],
+        "sexo": ["Sexo"],
+        "edad": ["Edad"]
+      }
+    },
+    "vehiculos": {
+      "tipo": "vehiculos",
+      "nombres_hoja": ["Vehiculos"],
+      "campos": {
+        "id_registro": ["Codigo_Siniestro"],
+        "codigo_vehiculo": ["Codigo_Vehiculo"],
+        "clase": ["Clase"],
+        "servicio": ["Servicio"]
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="VÍA SEGURA: consulta de siniestralidad vial histórica de Bogotá D.C. con datos oficiales.">
+  <meta name="theme-color" content="#0f1f3d">
+  <title>VÍA SEGURA · Siniestralidad vial histórica de Bogotá</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/css/estilos.css">
+  <script type="module" src="/static/js/app.js"></script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="barra-superior">
+    <a class="marca" href="#/tablero" aria-label="VÍA SEGURA, inicio">
+      <span class="marca__logo" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="26" height="26" focusable="false">
+          <path d="M11 4h4l-3.2 24H7.6zM17 4h4l3.4 24h-4.2z" fill="#fff"/>
+          <path d="M15.3 8h1.4l.3 3.2h-2zM14.8 14.5h2.4l.3 3.8h-3z" fill="#34d1b0"/>
+        </svg>
+      </span>
+      <span>
+        <span class="marca__nombre">VÍA SEGURA</span>
+        <span class="marca__lema">Siniestralidad vial histórica de Bogotá</span>
+      </span>
+    </a>
+    <nav class="pestanas" aria-label="Secciones">
+      <ul>
+        <li><a href="#/tablero" data-ruta="tablero" data-icono="inicio">Inicio</a></li>
+        <li><a href="#/mapa" data-ruta="mapa" data-icono="mapa">Mapa</a></li>
+        <li><a href="#/analitica" data-ruta="analitica" data-icono="grafico">Analítica</a></li>
+        <li><a href="#/explorador" data-ruta="explorador" data-icono="tabla">Explorador</a></li>
+        <li><a href="#/fuentes" data-ruta="fuentes" data-icono="libro">Fuentes</a></li>
+        <li><a href="#/ayuda" data-ruta="ayuda" data-icono="ayuda">Ayuda</a></li>
+        <li><a href="#/admin" data-ruta="admin" data-icono="candado">Administración</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="barra-filtros" role="region" aria-label="Filtros activos">
+    <button class="boton boton--filtros" type="button" id="abrir-filtros" aria-haspopup="dialog" aria-controls="cajon-filtros">
+      <span data-icono="filtro"></span> Filtros <span class="insignia" data-conteo-filtros hidden>0</span>
+    </button>
+    <div id="chips" class="chips"></div>
+  </div>
+  <p id="aviso-demo" class="aviso-demo" hidden>
+    <strong>Datos de demostración.</strong> Está viendo registros sintéticos generados para probar la aplicación:
+    no son cifras oficiales. Cambie la fuente en «Filtros».
+  </p>
+
+  <main id="contenido" class="contenido" tabindex="-1">
+    <div id="vista"></div>
+  </main>
+
+  <dialog id="cajon-filtros" class="cajon" aria-labelledby="titulo-filtros">
+    <div class="cajon__cabecera">
+      <h2 id="titulo-filtros">Filtros</h2>
+      <button class="boton boton--claro" type="button" data-cerrar-filtros aria-label="Cerrar filtros">✕</button>
+    </div>
+    <div id="filtros-cuerpo" class="cajon__cuerpo"><p class="estado cargando" role="status">Cargando filtros…</p></div>
+    <div class="cajon__pie">
+      <button class="boton boton--claro" type="button" data-limpiar-filtros>Limpiar</button>
+      <button class="boton" type="button" data-cerrar-filtros>Ver resultados</button>
+    </div>
+  </dialog>
+
+  <div id="anuncio" class="solo-lectores" role="status" aria-live="polite"></div>
+
+  <footer class="pie">
+    <p>Datos históricos oficiales de la Secretaría Distrital de Movilidad de Bogotá (servicio ArcGIS SIMUR y anuarios).
+      No es navegación, no es tiempo real y no predice siniestros. Las cifras de fuentes distintas no se suman.</p>
+    <p><a href="#/fuentes">Fuentes y metodología</a> · <a href="/api/docs">API</a></p>
+  </footer>
+
+  <noscript><p class="noscript">VÍA SEGURA necesita JavaScript para mostrar los datos.</p></noscript>
+</body>
+</html>
